@@ -1,3 +1,13 @@
+# Desafio 1 - Virtual Piano (Bootcamp DIO + Ri Happy)
+
+Este projeto foi desenvolvido como parte da primeira atividade (Nível Intermediário) da semana final de desafios de código do Bootcamp de Front-end da DIO, em parceria com a Ri Happy.
+
+A missão original era reproduzir passo a passo o projeto de teclado virtual apresentado no bootcamp.
+
+**Código-fonte original do desafio:** [felipeAguiarCode/js-music-keyboard-virtual](https://github.com/felipeAguiarCode/js-music-keyboard-virtual)
+
+Eu optei por ir além da reprodução e implementar uma refatoração visual completa, aplicando uma identidade única ao projeto.
+
 ## 🎨 Transformação Visual: Adotando o Estilo "Kidcore"
 
 O projeto passou por uma grande refatoração visual, abandonando a aparência de um simulador de piano moderno e escuro para adotar uma estética vibrante e divertida, inspirada no estilo "kidcore" e "webcore".
