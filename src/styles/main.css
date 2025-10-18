@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #d9ffcb;
+  background-image: url("https://www.transparenttextures.com/patterns/simple-dashed.png");
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- O "Container" principal do piano --- */
+.container {
+  width: 100%;
+  max-width: 780px;
+  background-color: #fecffc;
+  border: 5px solid #8e44ad;
+  border-radius: 15px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.6);
+  padding: 25px;
+  overflow: hidden;
+}
+
+/* --- Header (Título e Controles) --- */
+.container header {
+  background-color: #fff9a4;
+  padding: 20px;
+  border-radius: 10px;
+  border: 4px solid #8e44ad;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #8e44ad;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header h2 {
+  font-size: 2rem;
+  color: #cf0f0f;
+  text-shadow: 3px 3px 0px #FFF;
+  margin-bottom: 20px;
+}
+
+header .column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  margin-top: 15px;
+}
+
+header .column span {
+  font-weight: 500;
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+/* --- As Teclas do Piano --- */
+.piano-keys {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 40px;
+  border: 4px solid #000;
+  border-radius: 5px;
+}
+
+.key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.key.white {
+  height: 230px;
+  width: 70px;
+  background: #fff;
+  border-left: 3px solid #000;
+  color: #333;
+  border-radius: 0;
+}
+
+.key.white:first-child {
+  border-left: none;
+  border-radius: 3px 0 0 3px;
+}
+
+.key.white:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.key.black {
+  height: 140px;
+  width: 44px;
+  z-index: 2;
+  margin: 0 -22px;
+  background: #00b8ff;
+  border: 3px solid #000;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  color: #fff;
+}
+
+/* --- Labels das Teclas (A, S, D...) --- */
+.key span {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Mantém sua funcionalidade de esconder as teclas */
+.key.hide span {
+  display: none;
+}
+
+/* --- Efeito de "Ativo" (quando toca) --- */
+.key.white.active {
+  transform: scale(0.97);
+  background: #f0f0f0;
+  box-shadow: 0 0 20px 5px #ffeb3b;
+  z-index: 3;
+}
+
+.key.black.active {
+  transform: scale(0.97);
+  box-shadow: 0 0 20px 5px #ffeb3b;
+  z-index: 3;
+}
+
+/* --- Estilizando os Controles --- */
+.volume-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 150px;
+  background: #8e44ad;
+  border: 2px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  accent-color: transparent;
+}
+
+.volume-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #ffeb3b;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.keys-check input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px;
+  height: 30px;
+  background: #8e44ad;
+  border: 3px solid #000;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.keys-check input[type="checkbox"]::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background-color: #ffeb3b;
+  border: 2px solid #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.keys-check input[type="checkbox"]:checked {
+  background-color: #00b8ff;
+}
+
+.keys-check input[type="checkbox"]:checked::before {
+  left: 29px;
+  background-color: #fecffc;
+}
